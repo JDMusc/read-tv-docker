@@ -15,6 +15,7 @@ install.packages(
     'shinythemes',
     'sortable',
     'stringr',
+    'styler',
     'tidyr',
     'tsibble')
 )
