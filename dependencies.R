@@ -1,21 +1,3 @@
 install.packages(
-  c('changepoint',
-    'DT',
-    'dplyr',
-    'feasts',
-    'ggforce',
-    'ggplot2',
-    'lubridate',
-    'magrittr',
-    'purrr',
-    'readr',
-    'rlang',
-    'shiny',
-    'shinyjs',
-    'shinythemes',
-    'sortable',
-    'stringr',
-    'styler',
-    'tidyr',
-    'tsibble')
+  c('devtools')
 )
