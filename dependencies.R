@@ -1,3 +1,4 @@
 install.packages(
-  c('devtools')
+  c('devtools',
+    'shiny')
 )

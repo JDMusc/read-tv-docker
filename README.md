@@ -16,7 +16,7 @@ Docker image for read-tv (Research & Exploratory Analysis Driven Time-data Visua
 
 ## Description
 
-This is a [Docker file](https://github.com/JDMusc/read-tv-docker/blob/master/Dockerfile) and project for the read-tv application.
+This is the [docker project](https://github.com/JDMusc/read-tv-docker/blob/master/Dockerfile) for the read-tv application.
 
 read-tv is a shiny application and associated console interface designed
 for visualizing changepoints in **irregularly and regularly spaced**
@@ -55,7 +55,7 @@ These steps are to run the application on a local machine, on port 8080.
    <img src='images_list.png'>
 3) Run and create a container from the image  
    ```bash
-   sudo docker run -p 8080:80 -v [path to cloned read-tv-docker repo] -itd readtv/readtvdocker
+   sudo docker run -p 8080:80 -v [path to cloned read-tv-docker repo] -itd readtv/readtvdocker bash
    ```  
    * You should now see the running container
    ```bash
@@ -67,18 +67,21 @@ These steps are to run the application on a local machine, on port 8080.
    ```bash
    sudo docker attach elated_booth[docker will give a different name to your container]
    ```   
- While inside the container, cd to the read-tv directory
-5) Launch R: ```R```
+5) While inside the container, cd to the read-tv directory and launch R: ```R```  
 6) Run application
    ``` r
-   >>> library(shiny)
-   >>> runApp(port = 80, host='0.0.0.0')
+   >>> library(readtv)
+   >>> app = launchReadtv()
+   >>> shiny::runApp(app, port = 80, host='0.0.0.0')
    ```
-
+7) Detach from docker container.   
+    ^p^q (control p, control q)
 ---
 
 ## Usage
 
-Open browser and type `localhost:8080` in the location bar.
+Open browser and type `http://localhost:8080` in the location bar. I am running it on a remote server, hence the location bar is slightly different.
+<img src="browser.png">
 
-There is a read-tv tutorial at the read-tv repo.
+There is a read-tv tutorial at the [read-tv repo](https://github.com/JDMusc/READ-TV.git
+).
